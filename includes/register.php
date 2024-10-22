@@ -14,7 +14,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center"><i class="fas fa-user-plus"></i> User Registration</h2>
-        <form action="./includes/process_registration.php" method="POST" enctype="multipart/form-data"
+        <form action="process_registration.php" method="POST" enctype="multipart/form-data"
             class="needs-validation" novalidate>
 
             <!-- Username -->

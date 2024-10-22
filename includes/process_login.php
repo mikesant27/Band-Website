@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['user_image'] = $user['FileData'] ? 'data:image/jpeg;base64,' . base64_encode($user['FileData']) : '';
 
                     // Redirect to the dashboard
-                    header('Location: dashboard.php');
+                    header('Location: home.php');
                     exit();
                 } else {
                     // Password is incorrect

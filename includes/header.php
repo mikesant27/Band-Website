@@ -1,6 +1,13 @@
 <?php
     session_start();
 
+    // Check if the user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        // Redirect to the index page if not logged in
+        header('Location: ../index.php');
+        exit();
+    }
+
     // Retrieve user data from the session
     $fullName = $_SESSION['full_name'];
     $userImage = $_SESSION['user_image'];

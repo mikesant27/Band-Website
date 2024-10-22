@@ -53,6 +53,7 @@
             <?php if (!empty($userImage)): ?>
                 <img src="<?php echo htmlspecialchars($userImage); ?>" alt="User Image">
             <?php endif; ?>
+            <a href="logout.php" class="logout-link text-decoration-none text-white">Logout</a>
         </div>
     <?php endif; ?>
 </div>

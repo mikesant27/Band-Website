@@ -17,7 +17,7 @@
         <h2 class="text-center">Login</h2>
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <form action="process_login.php" method="POST">
+                <form action="./includes/process_login.php" method="POST">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <div class="input-group">

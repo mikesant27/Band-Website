@@ -1,6 +1,6 @@
 <?php
 session_start();
-include './includes/conn.php';
+include 'conn.php';
 
 $error = "";
 

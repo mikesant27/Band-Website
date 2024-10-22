@@ -40,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['full_name'] = $user['full_name'];
                     $_SESSION['user_image'] = $user['FileData'] ? 'data:image/jpeg;base64,' . base64_encode($user['FileData']) : '';
 
-                    // Redirect to the dashboard
-                    header('Location: home.php');
+                    // Redirect to the home page
+                    header('Location: test.php');
                     exit();
                 } else {
                     // Password is incorrect

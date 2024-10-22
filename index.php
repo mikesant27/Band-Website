@@ -39,7 +39,7 @@
                     </button>
                 </form>
                 <div class="text-center mt-3">
-                    <p>Don't have an account? <a href="register.php"><i class="fas fa-user-plus"></i> Register</a></p>
+                    <p>Don't have an account? <a href="./includes/register.php"><i class="fas fa-user-plus"></i> Register</a></p>
                 </div>
             </div>
         </div>

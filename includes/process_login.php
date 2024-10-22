@@ -61,13 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // If there's an error, store it in the session and redirect to the login page
     if (!empty($error)) {
         $_SESSION['login_error'] = $error;
-        header('Location: index.php');
+        header('Location: ./index.php');
         exit();
     }
 } else {
     // If not a POST request, display an error message
     $error = "Invalid request method.";
     $_SESSION['login_error'] = $error;
-    header('Location: index.php');
+    header('Location: ./index.php');
     exit();
 }

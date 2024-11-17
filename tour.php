@@ -7,15 +7,6 @@
     <title>Tour</title>
 </head>
 <body>
-    <div class="menu">
-        <a href="home.php">Home</a>
-        <a href="music.html">Music</a>
-        <a href="tour.html">Tour</a>
-        <a href="merch.html">Merch</a>
-    </div>
-
-    <div class="header">
-        <h1>Band Name</h1>
-    </div>
+    <?php include './includes/header.php'; ?>
 </body>
 </html>

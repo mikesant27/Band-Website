@@ -29,17 +29,16 @@
                             <div class="card-body">
                                 <!-- =========================Start Content================================== -->
                                 <?php
-                                // Check if the 'message' parameter exists in the URL
-                                if (isset($_GET['message'])) {
-                                    // Retrieve the value from the 'key' parameter in the URL
-                                    $value = $_GET['message'];
+                                    // Check if the 'message' parameter exists in the URL
+                                    if (isset($_GET['message'])) {
+                                        // Retrieve the value from the 'key' parameter in the URL
+                                        $value = $_GET['message'];
 
-                                    // Output the value
-                                    echo "<p>$value" . "</p>";;
-                                } else {
-                                    echo  "<p>No 'message' parameter found in the URL." . "</p>";;
-                                }
-
+                                        // Output the value
+                                        echo "<p>$value" . "</p>";;
+                                    } else {
+                                        echo  "<p>No 'message' parameter found in the URL." . "</p>";;
+                                    }
                                 ?>
 
                                 <!-- ===========================End Content================================== -->

@@ -58,5 +58,5 @@ if (isset($conn)) {
 
 
 // Redirect with a message
-header('Location: ./show_message.php?type=Registration&message=' . $message);  // Use urlencode to encode the message for safe URL passing
+header('Location: ../show_message.php?type=Registration&message=' . $message);  // Use urlencode to encode the message for safe URL passing
 exit();  // Always use exit after a redirect to stop further execution

@@ -41,7 +41,7 @@
                                 }
 
                                 sleep(5);
-                                header('Location: ../home.php');
+                                header('Location: phpdocs/Final Project/home.php');
                                 ?>
 
                                 <!-- ===========================End Content================================== -->

@@ -38,6 +38,7 @@ if (isset($conn)) {
                 $stmt->bindParam(':password', $password);
                 $stmt->bindParam(':full_name', $full_name);
                 $stmt->bindParam(':fileData', $fileData, PDO::PARAM_LOB); // Storing as LOB (large object)
+                $stmt->bindParam(':role',"customer");
 
                 $stmt->execute();
 

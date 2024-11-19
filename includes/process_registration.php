@@ -41,7 +41,7 @@ if (isset($conn)) {
 
                 $stmt->execute();
 
-                $message = "New record created successfully";
+                $message = "New Account created successfully";
             } catch (PDOException $e) {
                 $message =  "Error inserting data: " . $e->getMessage();
             }

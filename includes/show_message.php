@@ -40,8 +40,6 @@
                                     echo  "<p>No 'message' parameter found in the URL." . "</p>";;
                                 }
 
-                                sleep(5);
-                                header('Location: ../home.php');
                                 ?>
 
                                 <!-- ===========================End Content================================== -->
@@ -50,6 +48,13 @@
                     </div>
             </div>
         </div>
+
+        <script>
+            // script to show the message above, wait 5 seconds, then go to home
+            setTimeout(function() {
+                window.location.href = "../home.php";
+            }, 5000); // Redirect after 5 seconds (5000ms)
+        </script>
     </body>
 
     </html>

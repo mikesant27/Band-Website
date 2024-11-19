@@ -26,3 +26,8 @@ CREATE TABLE transactions (
   date_time DATETIME,
   status ENUM('scheduled','completed','canceled') NOT NULL
 );
+
+/*
+Maybe change service_type to products bought?
+
+*/

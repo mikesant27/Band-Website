@@ -30,15 +30,15 @@ if (isset($conn)) {
 
             try {
                 // Prepare SQL and bind parameters
-                $stmt = $conn->prepare("INSERT INTO users (username, email, password, full_name, FileData) 
-                                        VALUES (:username, :email, :password, :full_name, :fileData)");
+                $stmt = $conn->prepare("INSERT INTO users (username, email, password, full_name, FileData, role) 
+                                        VALUES (:username, :email, :password, :full_name, :fileData, :role)");
 
                 $stmt->bindParam(':username', $username);
                 $stmt->bindParam(':email', $email);
                 $stmt->bindParam(':password', $password);
                 $stmt->bindParam(':full_name', $full_name);
                 $stmt->bindParam(':fileData', $fileData, PDO::PARAM_LOB); // Storing as LOB (large object)
-                $stmt->bindParam(':role',"customer");
+                $stmt->bindParam(':role','customer');
 
                 $stmt->execute();
 

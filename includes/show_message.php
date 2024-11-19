@@ -39,6 +39,9 @@
                                 } else {
                                     echo  "<p>No 'message' parameter found in the URL." . "</p>";;
                                 }
+
+                                sleep(5);
+                                header('Location: ../home.php');
                                 ?>
 
                                 <!-- ===========================End Content================================== -->

@@ -41,7 +41,7 @@
                                 }
 
                                 sleep(5);
-                                header('Location: ./home.php');
+                                header('Location: ../home.php');
                                 ?>
 
                                 <!-- ===========================End Content================================== -->

@@ -52,7 +52,7 @@
             // script to show the message above, wait 5 seconds, then go to home
             setTimeout(function() {
                 window.location.href = "../index.php";
-            }, 5000); // Redirect after 5 seconds (5000ms)
+            }, 3000); // Redirect after 3 seconds (3000ms)
         </script>
     </body>
 

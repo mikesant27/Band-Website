@@ -38,10 +38,10 @@
 </style>
 
 <div class="menu">
-    <a href="home.php">Home</a>
-    <a href="music.php">Music</a>
-    <a href="tour.php">Tour</a>
-    <a href="merch.php">Merch</a>
+    <a href="../home/home.php">Home</a>
+    <a href="../music/music.php">Music</a>
+    <a href="../tour/tour.php">Tour</a>
+    <a href="../merch/merch.php">Merch</a>
 </div>
 
 <div class="header">

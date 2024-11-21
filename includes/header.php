@@ -38,7 +38,7 @@
 </style>
 
 <div class="menu">
-    <a href="../home/home.php">Home</a>
+    <a href="../../home/PL/home.php">Home</a>
     <a href="../music/music.php">Music</a>
     <a href="../tour/tour.php">Tour</a>
     <a href="../merch/PL/productList.php">Merch</a>

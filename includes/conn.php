@@ -9,7 +9,7 @@ $db_name = "test";          // Database Name
 
 try {
     // Create a new PDO instance
-    $conn = new PDO("mysql:host=$host;dbname=$db_name", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$db_name", $username, $password);
 
     // Set the PDO error mode to exception to handle errors
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

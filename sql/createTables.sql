@@ -24,7 +24,8 @@ CREATE TABLE ALBUM (
   album_name VARCHAR(255) NOT NULL,
   artist_name VARCHAR(255) NOT NULL,
   release_date DATE,
-  genre VARCHAR(100) 
+  genre VARCHAR(100),
+  album_cover longblob DEFAULT NULL,
 );
 
 CREATE TABLE SONG (

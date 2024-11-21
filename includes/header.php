@@ -41,7 +41,7 @@
     <a href="../home/home.php">Home</a>
     <a href="../music/music.php">Music</a>
     <a href="../tour/tour.php">Tour</a>
-    <a href="../merch/merch.php">Merch</a>
+    <a href="../merch/PL/productList.php">Merch</a>
 </div>
 
 <div class="header">

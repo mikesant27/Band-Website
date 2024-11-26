@@ -5,7 +5,7 @@
 $servername = "localhost"; // Or your database server's address
 $username = "root";        // Your MySQL username
 $password = "";            // Your MySQL password
-$db_name = "test";          // Database Name
+$db_name = "banddb";          // Database Name
 
 try {
     // Create a new PDO instance

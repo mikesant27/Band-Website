@@ -1,8 +1,8 @@
 <?php
-require_once '../BLL/ProductController.php';
+require_once '../BLL/ShowController.php';
 
-$controller = new ProductController();
-$products = $controller->listProducts();
+$controller = new ShowController();
+$shows = $controller->listShows();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ $products = $controller->listProducts();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
+    <title>Shows</title>
     <link rel="stylesheet" href="../../../css/style.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,40 +28,23 @@ $products = $controller->listProducts();
     <?php include '../../../includes/header.php'; ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Product List</h1>
+            <h1>Shows</h1>
         </div>
         <div class="table-responsive mt-3">
             <table id="productTable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Description</th>
-                        <th>Actions</th>
+                        <th>Location</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($products as $product): ?>
+                    <?php foreach ($shows as $show): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($product['id']); ?></td>
-                        <td><?php echo htmlspecialchars($product['name']); ?></td>
-                        <td><?php echo htmlspecialchars($product['price']); ?></td>
-                        <td><?php echo htmlspecialchars($product['description']); ?></td>
-                        <td>
-                            <a href="addProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-success btn-sm">
-                                <i class="fas fa-add"></i>
-                            </a>
-                            <a href="viewProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-info btn-sm">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="editProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a href="deleteProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </td>
+                        <td><?php echo htmlspecialchars($show['id']); ?></td>
+                        <td><?php echo htmlspecialchars($show['location']); ?></td>
+                        <td><?php echo htmlspecialchars($show['show_time']); ?></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

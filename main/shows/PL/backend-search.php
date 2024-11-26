@@ -1,7 +1,7 @@
 <?php
-require_once '../BLL/ProductController.php';
+require_once '../BLL/ShowController.php';
 
-$controller = new ProductController();
+$controller = new ShowController();
 
 $limit = 5;
 $page = isset($_POST["page"]) ? (int)$_POST["page"] : 1;
@@ -9,7 +9,7 @@ $offset = ($page - 1) * $limit;
 
 if (isset($_POST["search_term"])) {
     $search_term = '%' . filter_var($_POST["search_term"], FILTER_SANITIZE_STRING) . '%';
-    $products = $controller->searchProducts($search_term, $limit, $offset);
+    $products = $controller->searchShows($search_term, $limit, $offset);
 
     echo '<table class="table table-striped">';
     //echo '<thead><tr><th>Name</th><th>Price</th><th>Description</th><th>Actions</th></tr></thead>';

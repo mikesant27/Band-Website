@@ -45,10 +45,11 @@ CREATE TABLE SHOWS(
 
 CREATE TABLE transactions (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT FOREIGN KEY REFERENCES users(id),
+  user_id INT,
   service_type VARCHAR(100),
   date_time DATETIME,
-  status ENUM('scheduled','completed','canceled') NOT NULL
+  status ENUM('scheduled','completed','canceled') NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 /*

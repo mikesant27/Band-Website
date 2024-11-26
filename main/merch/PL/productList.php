@@ -19,13 +19,13 @@ $products = $controller->listProducts();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <!-- Include DataTables CSS and jQuery -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; ?>
+    <?php include '../../../includes/header.php'; 
+    $isAdmin = $_SESSION['role'] === 'admin';
+    ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Product List</h1>
@@ -38,7 +38,9 @@ $products = $controller->listProducts();
                         <th>Name</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <th>Actions</th>
+                        <?php if ($isAdmin): ?>
+                            <th>Actions</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,20 +50,22 @@ $products = $controller->listProducts();
                         <td><?php echo htmlspecialchars($product['name']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
                         <td><?php echo htmlspecialchars($product['description']); ?></td>
-                        <td>
-                            <a href="addProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-success btn-sm">
-                                <i class="fas fa-add"></i>
-                            </a>
-                            <a href="viewProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-info btn-sm">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="editProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a href="deleteProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </td>
+                        <?php if ($isAdmin): ?>
+                            <td>
+                                <a href="addProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-success btn-sm">
+                                    <i class="fas fa-add"></i>
+                                </a>
+                                <a href="viewProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-info btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="editProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="deleteProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        <?php endif; ?>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -70,7 +74,6 @@ $products = $controller->listProducts();
     </div>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
-    <!-- Include jQuery and DataTables JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>

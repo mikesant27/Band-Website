@@ -41,7 +41,7 @@
 <div class="menu">
     <a href="../../home/PL/home.php">Home</a>
     <a href="../../music/PL/music.php">Music</a>
-    <a href="../../tour/PL/tour.php">Tour</a>
+    <a href="../../shows/PL/showList.php">Tour</a>
     <a href="../../merch/PL/productList.php">Merch</a>
 </div>
 

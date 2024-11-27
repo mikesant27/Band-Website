@@ -39,6 +39,9 @@ $shows = $controller->listShows();
                         <th>ID</th>
                         <th>Location</th>
                         <th>Time</th>
+                        <?php if ($isAdmin): ?>
+                            <th>Actions</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +50,22 @@ $shows = $controller->listShows();
                         <td><?php echo htmlspecialchars($show['id']); ?></td>
                         <td><?php echo htmlspecialchars($show['location']); ?></td>
                         <td><?php echo htmlspecialchars($show['show_time']); ?></td>
+                        <?php if ($isAdmin): ?>
+                            <td>
+                                <a href="addShow.php?id=<?php echo $show['id']; ?>" class="btn btn-success btn-sm">
+                                    <i class="fas fa-add"></i>
+                                </a>
+                                <a href="viewShow.php?id=<?php echo $show['id']; ?>" class="btn btn-info btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="editShow.php?id=<?php echo $show['id']; ?>" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="deleteShow.php?id=<?php echo $show['id']; ?>" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        <?php endif; ?>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

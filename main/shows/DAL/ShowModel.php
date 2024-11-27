@@ -38,7 +38,7 @@ class ShowModel
         return $stmt->execute();
     }
 
-    public function updateShow($id, $locate, $show_time)
+    public function updateShow($id, $location, $show_time)
     {
         $query = "UPDATE " . $this->table_name . " SET location = :location, show_time = :show_time WHERE id = :id";
         $stmt = $this->conn->prepare($query);

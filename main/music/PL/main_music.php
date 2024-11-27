@@ -1,6 +1,6 @@
 <?php
 
-include 'conn.php';
+include '../../../includes/conn.php';
 
 // Check if $conn is defined and available
 if (isset($conn)) {

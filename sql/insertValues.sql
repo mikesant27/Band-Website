@@ -17,3 +17,7 @@ INSERT INTO blog (title, content, author_id) VALUES
  ('Test Post 2',
  'This is another test post. This one is smaller.',
  1);
+
+ INSERT INTO images(title, image_path) VALUES
+ ('Test Image',
+ '../includes/images/SoldierField.jpg');

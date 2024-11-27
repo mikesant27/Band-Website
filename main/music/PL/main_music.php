@@ -1,6 +1,6 @@
 <?php
 
-include 'conn.php';
+include '../../../includes/conn.php';
 
 // Check if $conn is defined and available
 if (isset($conn)) {
@@ -45,7 +45,6 @@ if (isset($conn)) {
 
 ?>
 <div class="carousel-container mt-3">
-    <h2>Home Page</h2>
     <div class="card">
         <div class="card-body">
 

@@ -44,6 +44,7 @@
     <a href="../../music/PL/music.php">Music</a>
     <a href="../../shows/PL/showList.php">Shows</a>
     <a href="../../merch/PL/productList.php">Merch</a>
+    <a href="../../blog/PL/blog.php">Blog</a>
     <!--Change href below once admin dashboard has been made-->
     <?php if ($isAdmin): ?><a href="../../home/PL/home.php">Admin</a><?php endif; ?>
 </div>

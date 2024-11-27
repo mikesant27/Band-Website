@@ -9,5 +9,6 @@
 </head>
 <body>
     <?php include '../../../includes/header.php'; ?>
+    <?php include 'main_music.php'; ?>
 </body>
 </html>

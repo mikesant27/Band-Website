@@ -71,6 +71,13 @@ CREATE TABLE blog (
     FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+);
+
 /*
 Maybe change service_type to products bought?
 Transactions table not working

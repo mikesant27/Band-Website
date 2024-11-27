@@ -25,7 +25,9 @@ $shows = $controller->listShows();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; ?>
+    <?php include '../../../includes/header.php'; 
+    $isAdmin = $_SESSION['role'] === 'admin';
+    ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Shows</h1>

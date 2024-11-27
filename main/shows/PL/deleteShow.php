@@ -1,33 +1,32 @@
 <?php
-require_once '../BLL/ProductController.php';
+require_once '../BLL/ShowController.php';
 
 $error_message = '';
 $success_message = '';
-$name = $price = $description = '';
-$product_id = null;
+$location = $show_time = '';
+$id = null;
 
-$controller = new ProductController();
+$controller = new ShowController();
 
 if (isset($_GET['id'])) {
-    $product_id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $product = $controller->viewProduct($product_id);
+    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+    $show = $controller->viewShow($id);
 
-    if ($product) {
-        $name = $product['name'];
-        $price = $product['price'];
-        $description = $product['description'];
+    if ($show) {
+        $location = $show['location'];
+        $show_time = $show['show_time'];
     } else {
-        $error_message = "Product not found.";
+        $error_message = "Show not found.";
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_NUMBER_INT);
+    $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
 
-    if ($controller->deleteProduct($product_id)) {
-        $success_message = "Product deleted successfully!";
-        header("Location: productList.php");
+    if ($controller->deleteShow($id)) {
+        $success_message = "Show deleted successfully!";
+        header("Location: showList.php");
         exit();
     } else {
-        $error_message = "Failed to delete product.";
+        $error_message = "Failed to delete show.";
     }
 }
 ?>
@@ -38,7 +37,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete This Product</title>
+    <title>Delete This Show</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -46,7 +45,7 @@ if (isset($_GET['id'])) {
     <div class="container my-5">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
-                <h1 class="card-title mb-0">Delete This Product</h1>
+                <h1 class="card-title mb-0">Delete This Show</h1>
             </div>
             <div class="card-body">
                 <?php if ($error_message): ?>
@@ -59,18 +58,17 @@ if (isset($_GET['id'])) {
                     </div>
                 <?php endif; ?>
 
-                <?php if ($product): ?>
-                    <p><strong>ID:</strong> <?php echo htmlspecialchars($product['id']); ?></p>
-                    <p><strong>Name:</strong> <?php echo htmlspecialchars($product['name']); ?></p>
-                    <p><strong>Price:</strong> $<?php echo htmlspecialchars($product['price']); ?></p>
-                    <p><strong>Description:</strong> <?php echo htmlspecialchars($product['description']); ?></p>
+                <?php if ($show): ?>
+                    <p><strong>ID:</strong> <?php echo htmlspecialchars($show['id']); ?></p>
+                    <p><strong>Location:</strong> <?php echo htmlspecialchars($show['location']); ?></p>
+                    <p><strong>Show Time:</strong> <?php echo htmlspecialchars($show['show_time']); ?></p>
                 <?php endif; ?>
             </div>
             <div class="card-footer text-end">
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     <i class="fas fa-trash-alt"></i> Delete
                 </button>
-                <a href="productList.php" class="btn btn-secondary">Back to Products</a>
+                <a href="showList.php" class="btn btn-secondary">Back to Shows</a>
             </div>
         </div>
     </div>
@@ -84,12 +82,12 @@ if (isset($_GET['id'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this product?
+                    Are you sure you want to delete this show?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <form method="POST" action="deleteProduct.php" style="display: inline;">
-                        <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
+                    <form method="POST" action="deleteShow.php" style="display: inline;">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>

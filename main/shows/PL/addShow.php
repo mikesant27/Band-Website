@@ -1,24 +1,23 @@
 <?php
-require_once '../BLL/ProductController.php';
+require_once '../BLL/ShowController.php';
 
-$controller = new ProductController();
+$controller = new ShowController();
 $error_message = '';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate input data
-    $product_id = htmlspecialchars(trim($_POST['product_id']));
-    $name = htmlspecialchars(trim($_POST['name']));
-    $price = htmlspecialchars(trim($_POST['price']));
-    $description = htmlspecialchars(trim($_POST['description']));
+    $show_id = htmlspecialchars(trim($_POST['id']));
+    $location = htmlspecialchars(trim($_POST['location']));
+    $show_time = htmlspecialchars(trim($_POST['show_time']));
 
-    // Attempt to add the product
-    if ($controller->addProduct($name, $price, $description)) {
-        echo "<div class='alert alert-success'>Product added successfully.</div>";
-        header("Location: productList.php");
+    // Attempt to add the show
+    if ($controller->addShow($location, $show_time)) {
+        echo "<div class='alert alert-success'>Show added successfully.</div>";
+        header("Location: showList.php");
         die();
     } else {
-        $error_message = "Failed to add product. Please try again.";
+        $error_message = "Failed to add show. Please try again.";
     }
 }
 ?>
@@ -29,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+    <title>Add Show</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -39,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-md-6">
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">
-                        <h2 class="mb-0">Add Product</h2>
+                        <h2 class="mb-0">Add Show</h2>
                     </div>
                     <div class="card-body">
                         <?php if (!empty($error_message)): ?>
@@ -48,29 +47,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         <?php endif; ?>
 
-                        <form method="post" action="addProduct.php">
-                            <input type="hidden" name="product_id"
-                                value="<?php echo isset($_GET['product_id']) ? htmlspecialchars($_GET['product_id']) : ''; ?>">
+                        <form method="post" action="addShow.php">
+                            <input type="hidden" name="id"
+                                value="<?php echo isset($_GET['id']) ? htmlspecialchars($_GET['id']) : ''; ?>">
 
                             <div class="mb-3">
-                                <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name" name="name" required
-                                    value="<?php echo isset($name) ? htmlspecialchars($name) : ''; ?>">
+                                <label for="location" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" required
+                                    value="<?php echo isset($location) ? htmlspecialchars($location) : ''; ?>">
                             </div>
 
                             <div class="mb-3">
-                                <label for="price" class="form-label">Price</label>
-                                <input type="text" class="form-control" id="price" name="price" required
-                                    value="<?php echo isset($price) ? htmlspecialchars($price) : ''; ?>">
+                                <label for="show_time" class="form-label">Show Time</label>
+                                <input type="text" class="form-control" id="show_time" name="show_time" required
+                                    value="<?php echo isset($show_time) ? htmlspecialchars($show_time) : ''; ?>">
                             </div>
 
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="4"
-                                    required><?php echo isset($description) ? htmlspecialchars($description) : ''; ?></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary w-100">Add Product</button>
+                            <button type="submit" class="btn btn-primary w-100">Add Show</button>
                         </form>
                     </div>
                 </div>

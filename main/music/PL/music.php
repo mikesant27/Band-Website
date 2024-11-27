@@ -9,6 +9,10 @@
 </head>
 <body>
     <?php include '../../../includes/header.php'; ?>
-    <?php include 'main_music.php'; ?>
+    <div class="container-fluid content-wrapper d-flex flex-column flex-grow-1">
+        <div class="row flex-grow-1">
+            <?php include 'main_music.php'; ?>
+        </div>
+    </div>
 </body>
 </html>

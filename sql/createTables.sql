@@ -63,5 +63,5 @@ CREATE TABLE transactions (
 
 /*
 Maybe change service_type to products bought?
-
+Transactions table not working
 */

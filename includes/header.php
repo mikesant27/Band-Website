@@ -11,6 +11,7 @@
     // Retrieve user data from the session
     $fullName = $_SESSION['full_name'];
     $userImage = $_SESSION['user_image'];
+    $isAdmin = $_SESSION['role'] === 'admin';
 ?>
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +44,8 @@
     <a href="../../music/PL/music.php">Music</a>
     <a href="../../shows/PL/showList.php">Shows</a>
     <a href="../../merch/PL/productList.php">Merch</a>
+    <!--Change href below once admin dashboard has been made-->
+    <?php if ($isAdmin): ?><a href="../../home/PL/home.php">Admin</a><?php endif; ?>
 </div>
 
 <div class="header">

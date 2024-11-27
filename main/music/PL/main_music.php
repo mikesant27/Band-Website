@@ -45,7 +45,6 @@ if (isset($conn)) {
 
 ?>
 <div class="carousel-container mt-3">
-    <h2>Home Page</h2>
     <div class="card">
         <div class="card-body">
 

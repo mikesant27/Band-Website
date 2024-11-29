@@ -27,7 +27,7 @@ if (isset($conn)) {
         if (!empty($image)) {
             $target_dir = "../includes/images/";  // Directory where images will be saved
             $target_file = $target_dir . basename($image);
-            $image_entry = "../includes/images/" . basename($image);
+            $image_entry = "../../../includes/images/" . basename($image);
 
             // Validate image type and size
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

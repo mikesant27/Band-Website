@@ -1,7 +1,7 @@
 <?php
-require_once '../BLL/ShowController.php';
+require_once '../BLL/UserController.php';
 
-$controller = new ShowController();
+$controller = new UserController();
 $shows = $controller->listShows();
 ?>
 

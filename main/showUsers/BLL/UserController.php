@@ -1,7 +1,7 @@
 <?php
-require_once '../DAL/ShowModel.php';
+require_once '../DAL/UserModel.php';
 
-class ShowController
+class UserController
 {
     private $model;
 
@@ -15,27 +15,22 @@ class ShowController
         return $this->model->getAllShows();
     }
 
-    public function viewShow($id)
+    public function viewUser($id)
     {
-        return $this->model->getShowById($id);
+        return $this->model->getUserById($id);
     }
 
-    public function addShow($location, $show_time)
+    public function updateUser($id, $username, $email, $full_name, $role)
     {
-        return $this->model->createShow($location, $show_time);
+        return $this->model->updateUser($id, $username, $email, $full_name, $role);
     }
 
-    public function updateShow($id, $location, $show_time)
+    public function deleteUser($id)
     {
-        return $this->model->updateShow($id, $location, $show_time);
+        return $this->model->deleteUser($id);
     }
 
-    public function deleteShow($id)
-    {
-        return $this->model->deleteShow($id);
-    }
-
-    public function searchShows($term, $limit = 5, $offset = 0)
+    public function searchUsers($term, $limit = 5, $offset = 0)
     {
         return $this->model->searchShows($term, $limit, $offset);
     }

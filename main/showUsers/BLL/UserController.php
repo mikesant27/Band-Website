@@ -10,7 +10,7 @@ class UserController
         $this->model = new ShowModel();
     }
 
-    public function listShows()
+    public function listUsers()
     {
         return $this->model->getAllUsers();
     }

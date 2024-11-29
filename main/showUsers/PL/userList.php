@@ -2,7 +2,7 @@
 require_once '../BLL/UserController.php';
 
 $controller = new UserController();
-$shows = $controller->listShows();
+$users = $controller->listUsers();
 ?>
 
 <!DOCTYPE html>
@@ -31,38 +31,43 @@ $shows = $controller->listShows();
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Shows</h1>
+            <h1>Users</h1>
         </div>
         <div class="table-responsive mt-3">
             <table id="productTable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Location</th>
-                        <th>Time</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Full Name</th>
+                        <th>Role</th>
+                        <th>Created</th>
+                        <th>Edited</th>
                         <?php if ($isAdmin): ?>
                             <th>Actions</th>
                         <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($shows as $show): ?>
+                    <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($show['id']); ?></td>
-                        <td><?php echo htmlspecialchars($show['location']); ?></td>
-                        <td><?php echo htmlspecialchars($show['show_time']); ?></td>
+                        <td><?php echo htmlspecialchars($user['id']); ?></td>
+                        <td><?php echo htmlspecialchars($user['username']); ?></td>
+                        <td><?php echo htmlspecialchars($user['email']); ?></td>
+                        <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+                        <td><?php echo htmlspecialchars($user['role']); ?></td>
+                        <td><?php echo htmlspecialchars($user['created_at']); ?></td>
+                        <td><?php echo htmlspecialchars($user['updated_at']); ?></td>
                         <?php if ($isAdmin): ?>
                             <td>
-                                <a href="addShow.php?id=<?php echo $show['id']; ?>" class="btn btn-success btn-sm">
-                                    <i class="fas fa-add"></i>
-                                </a>
-                                <a href="viewShow.php?id=<?php echo $show['id']; ?>" class="btn btn-info btn-sm">
+                                <a href="viewShow.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="editShow.php?id=<?php echo $show['id']; ?>" class="btn btn-warning btn-sm">
+                                <a href="editShow.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="deleteShow.php?id=<?php echo $show['id']; ?>" class="btn btn-danger btn-sm">
+                                <a href="deleteShow.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

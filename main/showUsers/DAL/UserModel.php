@@ -29,12 +29,14 @@ class ShowModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function updateUser($id, $location, $show_time)
+    public function updateUser($id, $username, $email, $full_name, $role)
     {
-        $query = "UPDATE " . $this->table_name . " SET location = :location, show_time = :show_time WHERE id = :id";
+        $query = "UPDATE " . $this->table_name . " SET username = :username, email = :email, full_name = :full_name, role = :role WHERE id = :id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":location", $location);
-        $stmt->bindParam(":show_time", $show_time);
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":full_name", $full_name);
+        $stmt->bindParam(":role", $role);
         $stmt->bindParam(":id", $id, PDO::PARAM_INT); // Specify the data type
         return $stmt->execute();
     }

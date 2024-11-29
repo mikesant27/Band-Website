@@ -12,7 +12,7 @@ class UserController
 
     public function listShows()
     {
-        return $this->model->getAllShows();
+        return $this->model->getAllUsers();
     }
 
     public function viewUser($id)

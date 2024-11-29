@@ -61,13 +61,13 @@ $users = $controller->listUsers();
                         <td><?php echo htmlspecialchars($user['updated_at']); ?></td>
                         <?php if ($isAdmin): ?>
                             <td>
-                                <a href="viewShow.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">
+                                <a href="viewUser.php?id=<?php echo $user['id']; ?>" class="btn btn-info btn-sm">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="editShow.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">
+                                <a href="editUser.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="deleteShow.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">
+                                <a href="deleteUser.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </td>

@@ -1,5 +1,5 @@
 <div class="container mt-3">
-                        <h2>Insert Carousel Image</h2>
+                        <h2>Insert Music Image</h2>
                         <div class="card">
                             <div class="card-body">
                                 <h2 class="text-center">Upload an Image</h2>

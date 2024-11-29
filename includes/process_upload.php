@@ -25,23 +25,23 @@ if (isset($conn)) {
 
         // Validate image upload
         if (!empty($image)) {
-            $target_dir = "../images/";  // Directory where images will be saved
+            $target_dir = "../includes/images/";  // Directory where images will be saved
             $target_file = $target_dir . basename($image);
-            $image_entry = "./images/" . basename($image);
+            $image_entry = "../includes/images/" . basename($image);
 
             // Validate image type and size
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
             $check = getimagesize($_FILES['image']['tmp_name']); // Check if image is valid
             if ($check === false) {
                 $message = "File is not an image.";
-                header('Location: ../show_message.php?type=Upload Carousel&message=' . urlencode($message));
+                header('Location: ../includes/show_message.php?type=Upload Image&message=' . urlencode($message));
                 exit();
             }
 
             // Check file size (e.g., max 5MB)
             if ($_FILES['image']['size'] > 5000000) {
                 $message = "Sorry, your file is too large.";
-                header('Location: ../show_message.php?type=Upload Carousel&message=' . urlencode($message));
+                header('Location: ../includes/show_message.php?type=Upload Image&message=' . urlencode($message));
                 exit();
             }
 
@@ -49,7 +49,7 @@ if (isset($conn)) {
             $allowed_types = ['jpg', 'jpeg', 'png', 'gif'];
             if (!in_array($imageFileType, $allowed_types)) {
                 $message = "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
-                header('Location: ../show_message.php?type=Upload Carousel&message=' . urlencode($message));
+                header('Location: ../includes/show_message.php?type=Upload Image&message=' . urlencode($message));
                 exit();
             }
 
@@ -83,7 +83,7 @@ if (isset($conn)) {
 ob_end_flush();  // End output buffering and flush the output
 
 // Redirect with a message
-header('Location: ../show_message.php?type=Upload Carousel&message=' . $message);
+header('Location: ../includes/show_message.php?type=Upload Image&message=' . $message);
 exit(); // Always use exit after a redirect to stop further execution
 
 ?>

@@ -43,7 +43,9 @@
     <div class="dashboard-container">
         <h1>Staff Dashboard</h1>
         <div class="link-container">
-            <a href="" class="dashboard-link">Placeholder</a>
+            <a href="../../shows/PL/addShow.php" class="dashboard-link">Create Show</a>
+            <a href="../../merch/PL/addProduct.php" class="dashboard-link">Create Product</a>
+            <a href="../../blog/PL/addBlog.php" class="dashboard-link">Create Blog Post</a>
         </div>
     </div>
 

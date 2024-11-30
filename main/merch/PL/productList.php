@@ -25,7 +25,7 @@ $products = $controller->listProducts();
 
 <body>
     <?php include '../../../includes/header.php'; 
-    $isAdmin = $_SESSION['role'] === 'admin';
+    $isStaff = $_SESSION['role'] === 'staff';
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
@@ -39,7 +39,7 @@ $products = $controller->listProducts();
                         <th>Name</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <th>Actions</th>
                         <?php endif; ?>
                     </tr>
@@ -51,7 +51,7 @@ $products = $controller->listProducts();
                         <td><?php echo htmlspecialchars($product['name']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
                         <td><?php echo htmlspecialchars($product['description']); ?></td>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <td>
                                 <a href="addProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-success btn-sm">
                                     <i class="fas fa-add"></i>

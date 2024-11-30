@@ -27,7 +27,7 @@ $shows = $controller->listShows();
 
 <body>
     <?php include '../../../includes/header.php'; 
-    $isAdmin = $_SESSION['role'] === 'admin';
+    $isStaff = $_SESSION['role'] === 'staff';
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
@@ -40,7 +40,7 @@ $shows = $controller->listShows();
                         <th>ID</th>
                         <th>Location</th>
                         <th>Time</th>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <th>Actions</th>
                         <?php endif; ?>
                     </tr>
@@ -51,7 +51,7 @@ $shows = $controller->listShows();
                         <td><?php echo htmlspecialchars($show['id']); ?></td>
                         <td><?php echo htmlspecialchars($show['location']); ?></td>
                         <td><?php echo htmlspecialchars($show['show_time']); ?></td>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <td>
                                 <a href="addShow.php?id=<?php echo $show['id']; ?>" class="btn btn-success btn-sm">
                                     <i class="fas fa-add"></i>

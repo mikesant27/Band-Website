@@ -5,7 +5,7 @@ CREATE TABLE users (
   password varchar(255) NOT NULL,
   full_name varchar(100) DEFAULT NULL,
   FileData longblob DEFAULT NULL,
-  role enum('admin','member','customer') NOT NULL DEFAULT 'customer',
+  role enum('admin','staff','customer') NOT NULL DEFAULT 'customer',
   created_at timestamp NOT NULL DEFAULT current_timestamp(),
   updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
@@ -72,6 +72,13 @@ CREATE TABLE blog (
 );
 
 CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `image_path` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+);
+
+CREATE TABLE `pictures` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `image_path` varchar(255) NOT NULL,

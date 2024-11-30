@@ -21,3 +21,7 @@ INSERT INTO blog (title, content, author_id) VALUES
  INSERT INTO images(title, image_path) VALUES
  ('Test Image',
  '../../../includes/images/SoldierField.jpg');
+
+ INSERT INTO pictures(title, image_path) VALUES
+ ('Test Picture', 
+ '../../../includes/pictures/Sasuke.jpg');

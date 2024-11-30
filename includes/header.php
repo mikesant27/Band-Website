@@ -46,6 +46,7 @@
     <a href="../../shows/PL/showList.php">Shows</a>
     <a href="../../merch/PL/productList.php">Merch</a>
     <a href="../../blog/PL/blogList.php">Blog</a>
+    <a href="../../pictures/PL/pictures.php">Pictures</a>
     <?php if ($isAdmin): ?><a href="../../admin/PL/admin.php">Admin</a><?php endif; ?>
     <?php if ($isStaff): ?><a href="../../staff/PL/staff.php">Staff</a><?php endif; ?>
 </div>

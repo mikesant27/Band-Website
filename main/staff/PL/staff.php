@@ -46,6 +46,7 @@
             <a href="../../shows/PL/addShow.php" class="dashboard-link">Create Show</a>
             <a href="../../merch/PL/addProduct.php" class="dashboard-link">Create Product</a>
             <a href="../../blog/PL/addBlog.php" class="dashboard-link">Create Blog Post</a>
+            <a href="../../pictures/PL/add_pictures.php" class="dashboard-link">Add a picture</a>
         </div>
     </div>
 

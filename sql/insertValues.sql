@@ -10,13 +10,13 @@ INSERT INTO shows (location, show_time) VALUES
 ('New Orleans','2024-12-04 08:00:00'),
 ('Dallas','2024-12-05 08:00:00');
 
-INSERT INTO blog (title, content, author_id) VALUES 
+INSERT INTO blog (title, content, creator) VALUES 
 ('Test Blog Post', 
  'This is a test blog post content. It is used to demonstrate how blog posts are displayed on the website. The content of this blog post can be as long as needed, but for testing, it will be kept relatively short.',
- 1),
+ 'Arbin'),
  ('Test Post 2',
  'This is another test post. This one is smaller.',
- 1);
+ 'Arbin');
 
  INSERT INTO images(title, image_path) VALUES
  ('Test Image',

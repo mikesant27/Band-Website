@@ -20,14 +20,14 @@ class BlogController
         return $this->model->getBlogById($id);
     }
 
-    public function addBlog($title, $content, $authorId)
+    public function addBlog($title, $content, $creator)
     {
-        return $this->model->createBlog($title, $content, $authorId);
+        return $this->model->createBlog($title, $content, $creator);
     }
 
-    public function updateBlog($id, $title, $content)
+    public function updateBlog($id, $title, $content, $creator)
     {
-        return $this->model->updateblog($id, $title, $content);
+        return $this->model->updateblog($id, $title, $content, $creator);
     }
 
     public function deleteBlog($id)

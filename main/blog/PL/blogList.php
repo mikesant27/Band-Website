@@ -40,6 +40,7 @@ $blogs = $controller->listBlogs();
                         <th>ID</th>
                         <th>Title</th>
                         <th>Content</th>
+                        <th>Creator</th>
                         <?php if ($isStaff): ?>
                             <th>Actions</th>
                         <?php endif; ?>
@@ -51,6 +52,7 @@ $blogs = $controller->listBlogs();
                         <td><?php echo htmlspecialchars($blog['id']); ?></td>
                         <td><?php echo htmlspecialchars($blog['title']); ?></td>
                         <td><?php echo htmlspecialchars($blog['content']); ?></td>
+                        <td><?php echo htmlspecialchars($blog['creator']); ?></td>
                         <?php if ($isStaff): ?>
                             <td>
                                 <a href="addBlog.php?id=<?php echo $blog['id']; ?>" class="btn btn-success btn-sm">

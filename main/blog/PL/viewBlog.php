@@ -1,20 +1,21 @@
 <?php
-require_once '../BLL/ShowController.php';
+require_once '../BLL/BlogController.php';
 
 $error_message = '';
 $success_message = '';
-$name = $price = $description = ''; // Default empty values
+$title = $content = $creator = ''; // Default empty values
 
 // Check if product_id is set in the URL for initial loading
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $controller = new ShowController();
-    $show = $controller->viewShow($id);
+    $controller = new BlogController();
+    $blog = $controller->viewblog($id);
 
-    if ($show) {
+    if ($blog) {
         // Populate variables with product data
-        $location = $show['location'];
-        $show_time = $show['show_time'];
+        $title = $blog['title'];
+        $content = $blog['content'];
+        $creator = $blog['creator'];
     } else {
         $error_message = "Product not found.";
     }
@@ -28,7 +29,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Details</title>
+    <title>blog Details</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -37,7 +38,7 @@ if (isset($_GET['id'])) {
     <div class="container my-5">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
-                <h1 class="card-title mb-0">Show Details</h1>
+                <h1 class="card-title mb-0">blog Details</h1>
             </div>
             <div class="card-body">
                 <?php if ($error_message): ?>
@@ -46,13 +47,14 @@ if (isset($_GET['id'])) {
                     </div>
                 <?php endif; ?>
 
-                <p><strong>ID:</strong> <?php echo htmlspecialchars($show['id']); ?></p>
-                <p><strong>Location:</strong> <?php echo htmlspecialchars($show['location']); ?></p>
-                <p><strong>Time:</strong> <?php echo htmlspecialchars($show['show_time']); ?></p>
+                <p><strong>ID:</strong> <?php echo htmlspecialchars($blog['id']); ?></p>
+                <p><strong>Title:</strong> <?php echo htmlspecialchars($blog['title']); ?></p>
+                <p><strong>Content:</strong> <?php echo htmlspecialchars($blog['content']); ?></p>
+                <p><strong>Creator:</strong> <?php echo htmlspecialchars($blog['creator']); ?></p>
             </div>
             <div class="card-footer text-end">
-                <a href="editShow.php?id=<?php echo $id; ?>" class="btn btn-warning">Edit</a>
-                <a href="showList.php" class="btn btn-secondary">Back to Shows</a>
+                <a href="editblog.php?id=<?php echo $id; ?>" class="btn btn-warning">Edit</a>
+                <a href="blogList.php" class="btn btn-secondary">Back to blogs</a>
             </div>
         </div>
     </div>

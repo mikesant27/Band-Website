@@ -29,13 +29,13 @@ class BlogModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function createBlog($title, $content, $authorId)
+    public function createBlog($title, $content, $creator)
     {
-        $query = "INSERT INTO " . $this->table_name . " (title, content, authorId) VALUES (:title, :content, :authorId)";
+        $query = "INSERT INTO " . $this->table_name . " (title, content, creator) VALUES (:title, :content, :creator)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":title", $title);
         $stmt->bindParam(":content", $content);
-        $stmt->bindParam(":description", $authorId);
+        $stmt->bindParam(":creator", $creator);
         return $stmt->execute();
     }
 
@@ -44,7 +44,7 @@ class BlogModel
         $query = "UPDATE " . $this->table_name . " SET title = :title, content = :content WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":title", $title);
-        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":content", $content);
         $stmt->bindParam(":id", $id, PDO::PARAM_INT); // Specify the data type
         return $stmt->execute();
     }

@@ -91,7 +91,7 @@ if (isset($_GET['id'])) {
                             <select name="role" id="role">
                                 <!--Dynamically sets default value of the select to the users current role-->
                                 <option value="admin" <?php echo htmlspecialchars($role) === 'admin' ? 'selected' : ''; ?>>Admin</option>
-                                <option value="member" <?php echo htmlspecialchars($role) === 'member' ? 'selected' : ''; ?>>Member</option>
+                                <option value="staff" <?php echo htmlspecialchars($role) === 'staff' ? 'selected' : ''; ?>>Staff</option>
                                 <option value="customer" <?php echo htmlspecialchars($role) === 'customer' ? 'selected' : ''; ?>>Customer</option>
                             </select>
                         </div>

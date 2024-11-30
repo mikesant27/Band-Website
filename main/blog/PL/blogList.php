@@ -27,7 +27,7 @@ $blogs = $controller->listBlogs();
 
 <body>
     <?php include '../../../includes/header.php'; 
-    $isAdmin = $_SESSION['role'] === 'admin';
+    $isStaff = $_SESSION['role'] === 'staff';
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
@@ -40,7 +40,7 @@ $blogs = $controller->listBlogs();
                         <th>ID</th>
                         <th>Title</th>
                         <th>Content</th>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <th>Actions</th>
                         <?php endif; ?>
                     </tr>
@@ -51,7 +51,7 @@ $blogs = $controller->listBlogs();
                         <td><?php echo htmlspecialchars($blog['id']); ?></td>
                         <td><?php echo htmlspecialchars($blog['title']); ?></td>
                         <td><?php echo htmlspecialchars($blog['content']); ?></td>
-                        <?php if ($isAdmin): ?>
+                        <?php if ($isStaff): ?>
                             <td>
                                 <a href="addBlog.php?id=<?php echo $blog['id']; ?>" class="btn btn-success btn-sm">
                                     <i class="fas fa-add"></i>

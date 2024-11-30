@@ -12,6 +12,7 @@
     $fullName = $_SESSION['full_name'];
     $userImage = $_SESSION['user_image'];
     $isAdmin = $_SESSION['role'] === 'admin';
+    $isStaff = $_SESSION['role'] === 'staff';
 ?>
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -46,6 +47,7 @@
     <a href="../../merch/PL/productList.php">Merch</a>
     <a href="../../blog/PL/blogList.php">Blog</a>
     <?php if ($isAdmin): ?><a href="../../admin/PL/admin.php">Admin</a><?php endif; ?>
+    <?php if ($isStaff): ?><a href="../../staff/PL/staff.php">Staff</a><?php endif; ?>
 </div>
 
 <div class="header">

@@ -20,17 +20,6 @@ CREATE TABLE products (
   updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
-CREATE TABLE ALBUM (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  album_name VARCHAR(255) NOT NULL,
-  artist_name VARCHAR(255) NOT NULL,
-  release_date DATE,
-  genre VARCHAR(100),
-  album_cover longblob DEFAULT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-);
-
 CREATE TABLE SONG (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,

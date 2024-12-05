@@ -49,13 +49,16 @@ $transactions = $controller->listTransactions();
                     <?php foreach ($transactions as $transaction): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($transaction['transaction_id']); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['user_id']); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['show_time']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['user_name']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['product_name']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['quantity']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['total_amount']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['transaction_date']); ?></td>
                         <td>
-                            <a href="viewShow.php?id=<?php echo $transaction['id']; ?>" class="btn btn-info btn-sm">
+                            <a href="viewTransaction.php?id=<?php echo $transaction['transaction_id']; ?>" class="btn btn-info btn-sm">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <a href="deleteShow.php?id=<?php echo $transaction['id']; ?>" class="btn btn-danger btn-sm">
+                            <a href="deleteTransaction.php?id=<?php echo $transaction['transaction_id']; ?>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>

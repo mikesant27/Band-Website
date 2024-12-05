@@ -12,7 +12,7 @@ class TransactionController
 
     public function listTransactions()
     {
-        return $this->model->getAllTransactions();
+        return $this->model->getTransactions();
     }
 
     public function viewTransaction($id)

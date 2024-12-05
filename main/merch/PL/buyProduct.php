@@ -3,7 +3,7 @@ require_once '../BLL/ProductController.php';
 
 $error_message = '';
 $success_message = '';
-$name = $price = $description = ''; // Default empty values
+$name = $price = $description = $user_id = $product_id = $quantity = $total = ''; // Default empty values
 $controller = new ProductController();
 
 // Check if product_id is set in the URL for initial loading

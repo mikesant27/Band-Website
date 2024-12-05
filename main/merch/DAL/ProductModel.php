@@ -78,6 +78,6 @@ class ProductModel
         $stmt->bindParam(':product', $product_id, PDO::PARAM_INT);
         $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
         $stmt->bindParam(':total', $total, PDO::PARAM_STR);
-        $stmt->execute();
+        return $stmt->execute();
     }
 }

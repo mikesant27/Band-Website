@@ -68,4 +68,9 @@ class ProductModel
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function buyProduct($product_id, $user_id, $quantity, $total)
+    {
+        
+    }
 }

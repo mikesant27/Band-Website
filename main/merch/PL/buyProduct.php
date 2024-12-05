@@ -20,12 +20,10 @@ if (isset($_GET['id'])) {
         $error_message = "Product not found.";
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
+    session_start();
     // Process the form submission to process transaction
-    
-    // NEED TO GET USER ID SOMEHOW 
 
-
+    $user_id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
     $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_NUMBER_INT);
     $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $total = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) * filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);

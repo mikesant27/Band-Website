@@ -39,4 +39,9 @@ class ProductController
     {
         return $this->model->searchProducts($term, $limit, $offset);
     }
+
+    public function buyProduct($product_id, $user_id, $quantity, $total)
+    {
+        return $this->model->buyProduct($product_id, $user_id, $quantity, $total);
+    }
 }

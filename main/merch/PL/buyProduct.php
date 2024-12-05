@@ -19,6 +19,18 @@ if (isset($_GET['id'])) {
     } else {
         $error_message = "Product not found.";
     }
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    var_dump($_POST);
+    // Process the form submission to process transaction
+    $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_NUMBER_INT);
+    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $total = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) * filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+    if ($controller->updateProduct($product_id, $name, $price, $description)) {
+        $success_message = "Product updated successfully!";
+    } else {
+        $error_message = "Failed to update product.";
+    }
 }
 
 ?>
@@ -53,6 +65,7 @@ if (isset($_GET['id'])) {
 
                 <form method="POST" action = "buyProduct.php">
                     <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
+                    <input type="hidden" name="price" value="<?php echo htmlspecialchars($product['price']); ?>">
 
                     <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity:</label>
@@ -72,6 +85,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!--Script to dynamically change the total for the user to see before they hit buy -->
     <script>
         document.getElementById('quantity').addEventListener('input', function () {
             const quantity = parseInt(this.value) || 1;

@@ -12,16 +12,16 @@ class ShowController
 
     public function listShows()
     {
-        return $this->model->getAllShows();
+        return $this->model->getAllTransactions();
     }
 
     public function viewShow($id)
     {
-        return $this->model->getShowById($id);
+        return $this->model->getTransactionById($id);
     }
 
     public function searchShows($term, $limit = 5, $offset = 0)
     {
-        return $this->model->searchShows($term, $limit, $offset);
+        return $this->model->searchTransactions($term, $limit, $offset);
     }
 }

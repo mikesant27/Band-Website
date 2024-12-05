@@ -56,30 +56,29 @@ if (isset($_GET['id'])) {
                 <h1 class="card-title mb-0">Buy Product</h1>
             </div>
             <div class="card-body">
-                <?php if ($error_message): ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?php echo htmlspecialchars($error_message); ?>
-                    </div>
+                <?php if (!empty($error_message)): ?>
+                    <p class="text-danger text-center"><?php echo $error_message; ?></p>
+                <?php elseif (!empty($success_message)): ?>
+                    <p class="text-success text-center"><?php echo $success_message; ?></p>
+                <?php else: ?>
+                    <p><strong>Name:</strong> <?php echo htmlspecialchars($product['name']); ?></p>
+                    <p><strong>Price:</strong> $<?php echo htmlspecialchars($product['price']); ?></p>
+                    <p><strong>Description:</strong> <?php echo htmlspecialchars($product['description']); ?></p>
+
+                    <form method="POST" action = "buyProduct.php">
+                        <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
+                        <input type="hidden" name="price" value="<?php echo htmlspecialchars($product['price']); ?>">
+
+                        <div class="mb-3">
+                                <label for="quantity" class="form-label">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" class="form-control" min="1" value = "1" required>
+
+                                <p>Total: $<span id="total" class="total"><?php echo number_format($product['price'], 2); ?></span></p>
+
+                                <input type="submit" class="btn btn-primary" value="Place Order">
+                        </div>
+                    </form>
                 <?php endif; ?>
-
-                <p><strong>Name:</strong> <?php echo htmlspecialchars($product['name']); ?></p>
-                <p><strong>Price:</strong> $<?php echo htmlspecialchars($product['price']); ?></p>
-                <p><strong>Description:</strong> <?php echo htmlspecialchars($product['description']); ?></p>
-
-                <form method="POST" action = "buyProduct.php">
-                    <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product_id); ?>">
-                    <input type="hidden" name="price" value="<?php echo htmlspecialchars($product['price']); ?>">
-
-                    <div class="mb-3">
-                            <label for="quantity" class="form-label">Quantity:</label>
-                            <input type="number" id="quantity" name="quantity" class="form-control" min="1" value = "1" required>
-
-                            <p>Total: $<span id="total" class="total"><?php echo number_format($product['price'], 2); ?></span></p>
-
-                            <input type="submit" class="btn btn-primary" value="Place Order">
-                    </div>
-                </form>
-
             </div>
             <div class="card-footer text-end">
                 <a href="productList.php" class="btn btn-secondary">Back to Products</a>

@@ -37,16 +37,19 @@ $transactions = $controller->listTransactions();
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Location</th>
-                        <th>Time</th>
+                        <th>User</th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($transactions as $transaction): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($transaction['id']); ?></td>
-                        <td><?php echo htmlspecialchars($transaction['location']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['transaction_id']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['user_id']); ?></td>
                         <td><?php echo htmlspecialchars($transaction['show_time']); ?></td>
                         <td>
                             <a href="viewShow.php?id=<?php echo $transaction['id']; ?>" class="btn btn-info btn-sm">

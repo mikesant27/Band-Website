@@ -20,6 +20,11 @@ class TransactionController
         return $this->model->getTransactionById($id);
     }
 
+    public function deleteTransaction($id)
+    {
+        return $this->model->deleteTransaction($id);
+    }
+
     public function searchTransactions($term, $limit = 5, $offset = 0)
     {
         return $this->model->searchTransactions($term, $limit, $offset);

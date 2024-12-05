@@ -2,7 +2,7 @@
 require_once '../BLL/TransactionController.php';
 
 $controller = new TransactionController();
-$shows = $controller->listTransactions();
+$transactions = $controller->listTransactions();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ $shows = $controller->listTransactions();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shows</title>
+    <title>Transactions</title>
     <link rel="icon" type="image/x-icon" href="../../../includes/favicon.png">
     <link rel="stylesheet" href="../../../css/style.css">
     <!-- Bootstrap CSS -->
@@ -27,11 +27,10 @@ $shows = $controller->listTransactions();
 
 <body>
     <?php include '../../../includes/header.php'; 
-    $isStaff = $_SESSION['role'] === 'staff';
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Shows</h1>
+            <h1>Transactions</h1>
         </div>
         <div class="table-responsive mt-3">
             <table id="productTable" class="table table-striped table-bordered">
@@ -40,33 +39,23 @@ $shows = $controller->listTransactions();
                         <th>ID</th>
                         <th>Location</th>
                         <th>Time</th>
-                        <?php if ($isStaff): ?>
-                            <th>Actions</th>
-                        <?php endif; ?>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($shows as $show): ?>
+                    <?php foreach ($transactions as $transaction): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($show['id']); ?></td>
-                        <td><?php echo htmlspecialchars($show['location']); ?></td>
-                        <td><?php echo htmlspecialchars($show['show_time']); ?></td>
-                        <?php if ($isStaff): ?>
-                            <td>
-                                <a href="addShow.php?id=<?php echo $show['id']; ?>" class="btn btn-success btn-sm">
-                                    <i class="fas fa-add"></i>
-                                </a>
-                                <a href="viewShow.php?id=<?php echo $show['id']; ?>" class="btn btn-info btn-sm">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <a href="editShow.php?id=<?php echo $show['id']; ?>" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="deleteShow.php?id=<?php echo $show['id']; ?>" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        <?php endif; ?>
+                        <td><?php echo htmlspecialchars($transaction['id']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['location']); ?></td>
+                        <td><?php echo htmlspecialchars($transaction['show_time']); ?></td>
+                        <td>
+                            <a href="viewShow.php?id=<?php echo $transaction['id']; ?>" class="btn btn-info btn-sm">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="deleteShow.php?id=<?php echo $transaction['id']; ?>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

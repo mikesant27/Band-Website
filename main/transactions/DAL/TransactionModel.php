@@ -12,14 +12,6 @@ class TransactionModel
         $this->conn = $conn;
     }
 
-    public function getAllTransactions()
-    {
-        $query = "SELECT * FROM " . $this->table_name;
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
     public function getTransactions()
 {
     $query = "SELECT transaction_id, users.username AS user_name, products.name AS product_name, quantity, transaction_date, total_amount 

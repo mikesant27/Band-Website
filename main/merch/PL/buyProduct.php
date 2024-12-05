@@ -59,12 +59,13 @@ if (isset($_GET['id'])) {
                             <input type="number" id="quantity" name="quantity" class="form-control" min="1" value = "1" required>
 
                             <p>Total: $<span id="total" class="total"><?php echo number_format($product['price'], 2); ?></span></p>
+
+                            <input type="submit" class="btn btn-primary" value="Place Order">
                     </div>
                 </form>
 
             </div>
             <div class="card-footer text-end">
-                <a href="editProduct.php?id=<?php echo $product_id; ?>" class="btn btn-primary">Buy</a>
                 <a href="productList.php" class="btn btn-secondary">Back to Products</a>
             </div>
         </div>

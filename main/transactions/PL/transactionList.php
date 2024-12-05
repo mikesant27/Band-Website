@@ -1,8 +1,8 @@
 <?php
-require_once '../BLL/ShowController.php';
+require_once '../BLL/TransactionController.php';
 
-$controller = new ShowController();
-$shows = $controller->listShows();
+$controller = new TransactionController();
+$shows = $controller->listTransactions();
 ?>
 
 <!DOCTYPE html>

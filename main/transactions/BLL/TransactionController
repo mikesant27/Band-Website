@@ -1,7 +1,7 @@
 <?php
 require_once '../DAL/TransactionModel.php';
 
-class ShowController
+class TransactionController
 {
     private $model;
 
@@ -10,17 +10,17 @@ class ShowController
         $this->model = new TransactionModel();
     }
 
-    public function listShows()
+    public function listTransactions()
     {
         return $this->model->getAllTransactions();
     }
 
-    public function viewShow($id)
+    public function viewTransaction($id)
     {
         return $this->model->getTransactionById($id);
     }
 
-    public function searchShows($term, $limit = 5, $offset = 0)
+    public function searchTransactions($term, $limit = 5, $offset = 0)
     {
         return $this->model->searchTransactions($term, $limit, $offset);
     }

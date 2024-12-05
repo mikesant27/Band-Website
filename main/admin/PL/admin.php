@@ -45,6 +45,7 @@
         <div class="link-container">
             <!--add_user.php is a placeholder-->
             <a href="../../showUsers/PL/userList.php" class="dashboard-link">Users</a>
+            <a href="../../transactions/PL/transactionList.php" class="dashboard-link">Transactions</a>
             <a href="../../music/PL/add_images.php" class="dashboard-link">Add Images</a>
         </div>
     </div>

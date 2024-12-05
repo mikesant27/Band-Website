@@ -1,32 +1,32 @@
 <?php
-require_once '../BLL/ShowController.php';
+require_once '../BLL/TransactionController.php';
 
 $error_message = '';
 $success_message = '';
 $location = $show_time = '';
 $id = null;
 
-$controller = new ShowController();
+$controller = new TransactionController();
 
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $show = $controller->viewShow($id);
+    $transaction = $controller->viewTransaction($id);
 
-    if ($show) {
-        $location = $show['location'];
-        $show_time = $show['show_time'];
+    if ($transaction) {
+        //$location = $transaction['location'];
+        //$show_time = $transaction['show_time'];
     } else {
         $error_message = "Show not found.";
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
 
-    if ($controller->deleteShow($id)) {
-        $success_message = "Show deleted successfully!";
-        header("Location: showList.php");
+    if ($controller->deleteTransaction($id)) {
+        $success_message = "Transaction deleted successfully!";
+        header("Location: transactionList.php");
         exit();
     } else {
-        $error_message = "Failed to delete show.";
+        $error_message = "Failed to delete Transaction.";
     }
 }
 ?>
@@ -58,17 +58,20 @@ if (isset($_GET['id'])) {
                     </div>
                 <?php endif; ?>
 
-                <?php if ($show): ?>
-                    <p><strong>ID:</strong> <?php echo htmlspecialchars($show['id']); ?></p>
-                    <p><strong>Location:</strong> <?php echo htmlspecialchars($show['location']); ?></p>
-                    <p><strong>Show Time:</strong> <?php echo htmlspecialchars($show['show_time']); ?></p>
+                <?php if ($transaction): ?>
+                    <p><strong>ID:</strong> <?php echo htmlspecialchars($transaction['transaction_id']); ?></p>
+                    <p><strong>User:</strong> <?php echo htmlspecialchars($transaction['user_name']); ?></p>
+                    <p><strong>Product:</strong> <?php echo htmlspecialchars($transaction['product_name']); ?></p>
+                    <p><strong>Quantity:</strong> <?php echo htmlspecialchars($transaction['quantity']); ?></p>
+                    <p><strong>Total:</strong> <?php echo htmlspecialchars($transaction['total_amount']); ?></p>
+                    <p><strong>Date:</strong> <?php echo htmlspecialchars($transaction['transaction_date']); ?></p>
                 <?php endif; ?>
             </div>
             <div class="card-footer text-end">
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     <i class="fas fa-trash-alt"></i> Delete
                 </button>
-                <a href="showList.php" class="btn btn-secondary">Back to Shows</a>
+                <a href="transactionList.php" class="btn btn-secondary">Back to Transactions</a>
             </div>
         </div>
     </div>
@@ -82,11 +85,11 @@ if (isset($_GET['id'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this show?
+                    Are you sure you want to delete this Transaction?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <form method="POST" action="deleteShow.php" style="display: inline;">
+                    <form method="POST" action="deleteTransaction.php" style="display: inline;">
                         <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>

@@ -73,11 +73,10 @@ if (isset($_GET['id'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('quantity').addEventListener('input', function () {
-            const quantity = parseInt(this.value) || 1; // Default to 1 if input is empty or invalid
-            const price = <?php echo json_encode($product['price']); ?>; // Get price from PHP
+            const quantity = parseInt(this.value) || 1;
+            const price = <?php echo json_encode($product['price']); ?>;
             const total = quantity * price;
-
-            document.getElementById('total').textContent = total.toFixed(2); // Update total with 2 decimal places
+            document.getElementById('total').textContent = total.toFixed(2);
         });
     </script>
 

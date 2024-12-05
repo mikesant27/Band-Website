@@ -1,5 +1,5 @@
 CREATE TABLE users (
-  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT,
   username varchar(50) NOT NULL,
   email varchar(100) NOT NULL,
   password varchar(255) NOT NULL,
@@ -24,9 +24,7 @@ CREATE TABLE SONG (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   duration TIME NOT NULL,
-  album_id INT,
   track_num INT,
-  FOREIGN KEY (album_id) REFERENCES ALBUM(id) ON DELETE CASCADE ON UPDATE CASCADE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );

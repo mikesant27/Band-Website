@@ -39,9 +39,7 @@ $products = $controller->listProducts();
                         <th>Name</th>
                         <th>Price</th>
                         <th>Description</th>
-                        <?php if ($isStaff): ?>
-                            <th>Actions</th>
-                        <?php endif; ?>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,6 +62,12 @@ $products = $controller->listProducts();
                                 </a>
                                 <a href="deleteProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        <?php else: ?>
+                            <td>
+                                <a href="buyProduct.php?id=<?php echo $product['id']; ?>" class="btn btn-success btn-sm">
+                                    <i class="fa-solid fa-cart-shopping"></i>
                                 </a>
                             </td>
                         <?php endif; ?>

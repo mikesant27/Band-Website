@@ -42,13 +42,12 @@ CREATE TABLE transactions (
     user_id INT NOT NULL,
     product_id INT NOT NULL,
     quantity INT NOT NULL,
-    transaction_date DATETIME NOT NULL,
+    transaction_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     total_amount DECIMAL(10, 2) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
 
 
 CREATE TABLE blog (

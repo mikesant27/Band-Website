@@ -4,11 +4,12 @@ require_once '../BLL/ProductController.php';
 $error_message = '';
 $success_message = '';
 $name = $price = $description = ''; // Default empty values
+$controller = new ProductController();
 
 // Check if product_id is set in the URL for initial loading
 if (isset($_GET['id'])) {
     $product_id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
-    $controller = new ProductController();
+    //$controller = new ProductController();
     $product = $controller->viewProduct($product_id);
 
     if ($product) {
@@ -25,13 +26,13 @@ if (isset($_GET['id'])) {
 
     $user_id = filter_var($_SESSION['user_id'], FILTER_SANITIZE_NUMBER_INT);
     $product_id = filter_var($_POST['product_id'], FILTER_SANITIZE_NUMBER_INT);
-    $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $quantity = filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     $total = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) * filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-    if ($controller->updateProduct($product_id, $name, $price, $description)) {
-        $success_message = "Product updated successfully!";
+    if ($controller->buyProduct($product_id, $user_id, $quantity, $total)) {
+        $success_message = "Product purchased successfully!";
     } else {
-        $error_message = "Failed to update product.";
+        $error_message = "Failed to purchase product.";
     }
 }
 

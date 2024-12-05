@@ -4,6 +4,7 @@ require_once '../../../includes/conn.php';
 class ProductModel
 {
     private $table_name = "products";
+    private $transactionTable = "transactions";
     private $conn;
 
     public function __construct()
@@ -71,6 +72,12 @@ class ProductModel
 
     public function buyProduct($product_id, $user_id, $quantity, $total)
     {
-        
+        $query = "INSERT INTO " . $this->transactionTable . " (user_id, product_id, quantity, total_amount) VALUES (:user, :product, :quantity, :total)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':user', $user_id, PDO::PARAM_INT);
+        $stmt->bindParam(':product', $product_id, PDO::PARAM_INT);
+        $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+        $stmt->bindParam(':total', $total, PDO::PARAM_STR);
+        $stmt->execute();
     }
 }

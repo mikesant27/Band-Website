@@ -27,15 +27,20 @@ class TransactionModel
 
     public function getTransactionById($id)
     {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE id = :id";
+        $query = "SELECT transaction_id, users.username AS user_name, products.name AS product_name, quantity, transaction_date, total_amount 
+              FROM " . $this->table_name . " 
+              JOIN users ON transactions.user_id = users.id 
+              JOIN products ON transactions.product_id = products.id
+              WHERE transactions.transaction_id = :transaction_id";
+    
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT); // Specify the data type
+        $stmt->bindParam(':transaction_id', $id, PDO::PARAM_INT); // Specify the data type
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function deleteTransaction($id){
-        $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
+        $query = "DELETE FROM " . $this->table_name . " WHERE transaction_id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT); // Specify the data type
         return $stmt->execute();

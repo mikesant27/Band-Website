@@ -1,5 +1,5 @@
 <?php
-require_once '../DAL/ShowModel.php';
+require_once '../DAL/TransactionModel.php';
 
 class ShowController
 {
@@ -7,7 +7,7 @@ class ShowController
 
     public function __construct()
     {
-        $this->model = new ShowModel();
+        $this->model = new TransactionModel();
     }
 
     public function listShows()
@@ -18,21 +18,6 @@ class ShowController
     public function viewShow($id)
     {
         return $this->model->getShowById($id);
-    }
-
-    public function addShow($location, $show_time)
-    {
-        return $this->model->createShow($location, $show_time);
-    }
-
-    public function updateShow($id, $location, $show_time)
-    {
-        return $this->model->updateShow($id, $location, $show_time);
-    }
-
-    public function deleteShow($id)
-    {
-        return $this->model->deleteShow($id);
     }
 
     public function searchShows($term, $limit = 5, $offset = 0)

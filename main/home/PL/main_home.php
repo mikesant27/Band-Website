@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="../../../css/style.css">
 
 <center><h2 id="Welcome">Welcome</h2></center>
-<p id="Home">Greeting, this is a test to see what it would look like for people viewing the page.</p>
+<p id="Home">Say hello to Band Name. <br><br>They've been a band since highschool where they started small in their garage, but
+    now they're one of the hottest bands in all of music. They're mainly a rock band but they've dabbled in many genres. 
+    Get to know them now because soon, the whole word will know their name and be rocking out to their songs.
+</p>
+
+<center><img id="band" src="Band.png" alt="Band Image" width="600" height="600"></center>

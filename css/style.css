@@ -16,3 +16,14 @@ h1 {
 .menu a:hover{
     text-decoration: underline;
 }
+
+@font-face {
+    font-family: 'Love';
+    src: url('../includes/fonts/Love.ttf');
+}
+
+#Welcome{
+    font-family: 'love', sans-serif;
+    font-size: 60px;
+    color: blue;
+}

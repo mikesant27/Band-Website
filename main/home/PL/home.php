@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php include '../../../includes/header.php'; ?>
-    <?php include'main_home.php'; ?>
+    <?php include 'main_home.php'; ?>
+    <?php include '../../../includes/footer.php' ?>
 </body>
 </html>

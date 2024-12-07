@@ -48,8 +48,6 @@ CREATE TABLE transactions (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-
-
 CREATE TABLE blog (
     id INT AUTO_INCREMENT PRIMARY KEY,        
     title VARCHAR(255) NOT NULL,              

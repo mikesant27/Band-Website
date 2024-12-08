@@ -26,9 +26,9 @@ $blogs = $controller->listBlogs();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; 
+    <CENTER><?php include '../../../includes/header.php'; 
     $isStaff = $_SESSION['role'] === 'staff';
-    ?>
+    ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Blogs</h1>

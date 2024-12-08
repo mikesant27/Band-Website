@@ -24,9 +24,9 @@ $products = $controller->listProducts();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; 
+    <CENTER><?php include '../../../includes/header.php'; 
     $isStaff = $_SESSION['role'] === 'staff';
-    ?>
+    ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1>Product List</h1>

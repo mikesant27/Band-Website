@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../../../includes/favicon.png">
 </head>
 <body>
-    <?php include '../../../includes/header.php'; ?>
+    <CENTER><?php include '../../../includes/header.php'; ?></CENTER>
     <div class="container-fluid content-wrapper d-flex flex-column flex-grow-1">
         <div class="row flex-grow-1">
             <?php include 'main_pictures.php'; ?>

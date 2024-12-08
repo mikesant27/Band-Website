@@ -22,10 +22,6 @@
                     <small class="form-text text-muted">Enter the duration in the format HH:MM:SS.</small>
                 </div>
                 <div class="mb-3">
-                    <label for="trackNumber" class="form-label">Track Number</label>
-                    <input type="number" class="form-control" id="trackNumber" name="track_num" placeholder="Enter track number">
-                </div>
-                <div class="mb-3">
                     <label for="imageFile" class="form-label">Select Cover Image</label>
                     <input class="form-control" type="file" id="imageFile" name="image" accept="image/*" required>
                 </div>

@@ -22,12 +22,11 @@ if (isset($conn)) {
         // Get form data
         $title = !empty($_POST['title']) ? $_POST['title'] : null;
         $duration = !empty($_POST['duration']) ? $_POST['duration'] : null;
-        $track_num = !empty($_POST['track_num']) ? (int)$_POST['track_num'] : null;
         $image = $_FILES['image']['name'];
 
 
-        if (empty($title) || empty($duration) || empty($track_num)) {
-            $message = "Title, duration, and track number are required fields.";
+        if (empty($title) || empty($duration)) {
+            $message = "Title and duration are required fields.";
             header('Location: ../includes/show_message.php?type=Upload Song$Message=' . urlencode($message));
             exit();
         }
@@ -65,14 +64,13 @@ if (isset($conn)) {
             // Move the uploaded image to the target directory
             if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
                 // Use a prepared statement to insert data into the database
-                $sql = "INSERT INTO SONG (title, duration, track_num, image_path) VALUES (:title, :duration, :track_num, :image_path)";
+                $sql = "INSERT INTO SONG (title, duration, image_path) VALUES (:title, :duration, :image_path)";
                 $stmt = $conn->prepare($sql);
 
                 try {
                     $stmt->execute([
                         ':title' => $title,
                         ':duration' => $duration,
-                        ':track_num' => $track_num,
                         ':image_path' => $image_entry
                     ]);
                     $message = "The file " . htmlspecialchars(basename($image)) . " has been uploaded and saved to the database.";

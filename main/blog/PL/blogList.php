@@ -31,10 +31,10 @@ $blogs = $controller->listBlogs();
     ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Blogs</h1>
+            <h1 style="color: white;">Blogs</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="blogTable" class="table table-striped table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>

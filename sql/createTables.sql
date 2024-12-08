@@ -24,7 +24,6 @@ CREATE TABLE SONG (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   duration TIME NOT NULL,
-  track_num INT,
   image_path varchar(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()

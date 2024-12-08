@@ -15,7 +15,7 @@ if (isset($conn)) {
     }
 
     // Fetch carousel data from the MySQL table
-    $sql = "SELECT * FROM images";
+    $sql = "SELECT * FROM song";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

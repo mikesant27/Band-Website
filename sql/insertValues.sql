@@ -18,10 +18,6 @@ INSERT INTO blog (title, content, creator) VALUES
  'This is another test post. This one is smaller.',
  'Arbin');
 
- INSERT INTO images(title, image_path) VALUES
- ('Test Image',
- '../../../includes/images/SoldierField.jpg');
-
  INSERT INTO pictures(title, image_path) VALUES
  ('Test Picture', 
  '../../../includes/pictures/Sasuke.jpg');

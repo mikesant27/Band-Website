@@ -38,7 +38,7 @@
             <?php if (!empty($userImage)): ?>
                 <img src="<?php echo htmlspecialchars($userImage); ?>" alt="User Image">
             <?php endif; ?>
-            <a href="../../../includes/logout.php" class="logout-link text-decoration-none text-white" style="text-decoration: none; color: black !important;">Logout</a>
+            <a href="../../../includes/logout.php" class="logout-link" style="text-decoration: none; color: #ff4500 !important;">Logout</a>
         </div>
     <?php endif; ?>
 </div>

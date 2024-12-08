@@ -26,19 +26,23 @@
             font-size: 16px;
             text-decoration: none;
             color: white;
-            background-color: #007BFF;
+            background-color: #ff4500;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         .dashboard-link:hover {
-            background-color: #0056b3;
+            background-color: #c94412;
+        }
+
+        .dashboard-container h1{
+            color: #ff4500;
         }
     </style>
 
 </head>
 <body>
-    <?php include '../../../includes/header.php'; ?>
+    <CENTER><?php include '../../../includes/header.php'; ?></CENTER>
 
     <div class="dashboard-container">
         <h1>Admin Dashboard</h1>

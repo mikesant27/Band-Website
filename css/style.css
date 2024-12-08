@@ -1,41 +1,3 @@
-/*
-h1 {
-    text-align: center;
-}
-
-.menu{
-    text-align: center;
-}
-
-.menu a{
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-}
-
-.menu a:hover{
-    text-decoration: underline;
-}
-
-@font-face {
-    font-family: 'Love';
-    src: url('../includes/fonts/Love.ttf');
-}
-
-#Welcome{
-    font-family: 'love', sans-serif;
-    font-size: 60px;
-    color: blue;
-}
-
-#Home{
-    font-size:25px;
-    padding: 20px;
-}
-*/
-
-/* General body styling */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -45,10 +7,10 @@ body {
     text-align: center;
 }
 
-/* Header Styling */
+
 .header {
     background-color: #444;
-    color: #ff4500; /* Rock-theme accent color */
+    color: #ff4500;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -59,7 +21,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Menu Styling */
 .menu {
     background-color: #222;
     padding: 10px 0;
@@ -80,7 +41,6 @@ body {
     border-radius: 4px;
 }
 
-/* Welcome Section */
 #Welcome {
     font-size: 2.5em;
     margin: 20px 0;
@@ -88,7 +48,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Home Section */
 #Home {
     font-size: 1.2em;
     margin: 20px auto;
@@ -98,7 +57,6 @@ body {
     color: #ccc;
 }
 
-/* Band Image Styling */
 #band {
     border: 5px solid #ff4500;
     border-radius: 10px;
@@ -110,7 +68,6 @@ body {
     transform: scale(1.05);
 }
 
-/* User Info */
 .user-info {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -142,7 +99,6 @@ body {
     font-size: 14px;
 }
 
-/* Footer Styling */
 footer {
     background-color: #111;
     color: #777;
@@ -161,7 +117,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2em;

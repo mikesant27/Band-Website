@@ -7,7 +7,6 @@ body {
     text-align: center;
 }
 
-
 .header {
     background-color: #444;
     color: #ff4500;
@@ -134,4 +133,51 @@ footer a:hover {
         width: 80%;
         height: auto;
     }
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: linear-gradient(135deg, #262626, #3d3d3d);
+    border: 2px solid #ff4500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 1em;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #444;
+    color: #ff4500;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ff4500;
+}
+
+td {
+    background: linear-gradient(135deg, #303030, #3a3a3a);
+    color: #e6e6e6;
+}
+
+tr:hover td {
+    background-color: #ff4500;
+    color: #1a1a1a;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+caption {
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff4500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }

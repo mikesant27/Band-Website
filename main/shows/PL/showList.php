@@ -31,10 +31,10 @@ $shows = $controller->listShows();
     ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Shows</h1>
+            <h1 style="color: white;">Shows</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="productTable" class="table table-striped table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>

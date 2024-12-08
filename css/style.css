@@ -23,7 +23,7 @@ h1 {
 }
 
 #Welcome{
-    
+    font-family: 'love', sans-serif;
     font-size: 60px;
     color: blue;
 }

@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-primary text-white" style="background-color: #ff4500 !important;">
                         <h2 class="mb-0">Add Product</h2>
                     </div>
                     <div class="card-body">
@@ -70,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     required><?php echo isset($description) ? htmlspecialchars($description) : ''; ?></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100">Add Product</button>
+                            <button type="submit" class="btn btn-primary w-100" style="background-color: #ff4500 !important;">Add Product</button>
                         </form>
                     </div>
                 </div>

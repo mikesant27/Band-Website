@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
 
     <div class="container my-5">
         <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white" style="background-color: #ff4500 !important;">
+            <div class="card-header bg-primary text-white" style="background-color: #ff4500 !important;">
                 <h1 class="card-title mb-0">Show Details</h1>
             </div>
             <div class="card-body">

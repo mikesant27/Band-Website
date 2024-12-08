@@ -17,28 +17,6 @@
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    .user-info {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .user-info img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        margin: 5px 0;
-    }
-
-    .logout-link {
-        margin-top: 5px;
-        font-size: 14px;
-    }
-</style>
 
 <div class="menu">
     <a href="../../home/PL/home.php">Home</a>

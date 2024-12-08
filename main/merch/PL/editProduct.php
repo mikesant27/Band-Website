@@ -43,13 +43,14 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product</title>
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
     <div class="container mt-5">
         <div class="text-center mb-3">
-            <a href="addProduct.php" class="btn btn-primary">Add New Product</a>
+            <a href="addProduct.php" class="btn btn-primary" style="background-color: #ff4500 !important;">Add New Product</a>
             <a href='productList.php' class='btn btn-secondary'>Back to Products</a>
         </div>
 

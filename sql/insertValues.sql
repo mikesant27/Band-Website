@@ -25,3 +25,6 @@ INSERT INTO blog (title, content, creator) VALUES
  INSERT INTO pictures(title, image_path) VALUES
  ('Test Picture', 
  '../../../includes/pictures/Sasuke.jpg');
+
+ INSERT INTO song(title, track_num, image_path) VALUES
+ ('First', 1, '../../../includes/images/SoldierField.jpg');

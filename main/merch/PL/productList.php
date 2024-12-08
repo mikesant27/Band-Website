@@ -29,10 +29,10 @@ $products = $controller->listProducts();
     ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Product List</h1>
+            <h1 style="color: white;">Product List</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="productTable" class="table table-striped table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>

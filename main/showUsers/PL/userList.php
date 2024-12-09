@@ -31,7 +31,7 @@ $users = $controller->listUsers();
     ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Users</h1>
+            <h1 style="color: white;">Users</h1>
         </div>
         <div class="table-responsive mt-3">
             <table>

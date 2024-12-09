@@ -33,7 +33,7 @@ $transactions = $controller->listTransactions();
             <h1>Transactions</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="productTable" class="table table-striped table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>

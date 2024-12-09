@@ -34,7 +34,7 @@ $users = $controller->listUsers();
             <h1>Users</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="productTable" class="table table-striped table-bordered">
+            <table id="userTable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -86,7 +86,7 @@ $users = $controller->listUsers();
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#productTable').DataTable({
+        $('#userTable').DataTable({
             responsive: true,
             autoWidth: false,
             paging: true,

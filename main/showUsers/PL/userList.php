@@ -34,7 +34,7 @@ $users = $controller->listUsers();
             <h1 style="color: white;">Users</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table>
+            <table id='userTable'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -89,7 +89,7 @@ $users = $controller->listUsers();
         $('#userTable').DataTable({
             responsive: true,
             autoWidth: false,
-            paging: true,
+            paging: true,   
             searching: true
         });
     });

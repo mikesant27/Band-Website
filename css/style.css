@@ -170,7 +170,8 @@ td {
 
 tr:hover td {
     background-color: #ff4500;
-    color: #1a1a1a;
+    /*color: #1a1a1a;*/
+    color: red;
     transition: background-color 0.3s, color 0.3s;
 }
 

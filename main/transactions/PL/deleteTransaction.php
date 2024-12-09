@@ -38,13 +38,14 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete This Show</title>
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
     <div class="container my-5">
         <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header bg-primary text-white" style="background-color: #ff4500 !important;">
                 <h1 class="card-title mb-0">Delete This Show</h1>
             </div>
             <div class="card-body">

@@ -26,15 +26,15 @@ $users = $controller->listUsers();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; 
+    <CENTER><?php include '../../../includes/header.php'; 
     $isAdmin = $_SESSION['role'] === 'admin';
-    ?>
+    ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>Users</h1>
+            <h1 style="color: white;">Users</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id="userTable" class="table table-striped table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>ID</th>

@@ -45,6 +45,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Product</title>
+    <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -52,7 +53,7 @@ if (isset($_GET['id'])) {
 
     <div class="container my-5">
         <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header bg-primary text-white" style="background-color: #ff4500 !important;">
                 <h1 class="card-title mb-0">Buy Product</h1>
             </div>
             <div class="card-body">
@@ -75,7 +76,7 @@ if (isset($_GET['id'])) {
 
                                 <p>Total: $<span id="total" class="total"><?php echo number_format($product['price'], 2); ?></span></p>
 
-                                <input type="submit" class="btn btn-primary" value="Place Order">
+                                <input type="submit" class="btn btn-primary" style="background-color: #ff4500 !important;" value="Place Order">
                         </div>
                     </form>
                 <?php endif; ?>

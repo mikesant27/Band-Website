@@ -30,7 +30,7 @@
 </div>
 
 <div class="header">
-    <h1>Band Name</h1>
+    <h1>Velvet Horizon</h1>
     <?php if (isset($_SESSION['user_id'])): ?>
         <!-- User information displayed at the top right corner -->
         <div class="user-info">

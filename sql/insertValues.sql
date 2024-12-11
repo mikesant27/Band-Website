@@ -16,11 +16,11 @@ INSERT INTO shows (location, show_time) VALUES
 ('Dallas','2024-12-05 08:00:00');
 
 INSERT INTO blog (title, content, creator) VALUES 
-('Test Blog Post', 
- 'This is a test blog post content. It is used to demonstrate how blog posts are displayed on the website. The content of this blog post can be as long as needed, but for testing, it will be kept relatively short.',
+('Behind the Scenes: Recording Our Latest Single', 
+ 'Ever wondered what goes into creating a song? Last week, we spent hours in the studio perfecting the sound of our new single, "Echoes of Midnight." From tweaking guitar riffs to experimenting with vocal harmonies, it was an incredible experience. Stay tuned—this track is dropping soon!',
  'Arbin'),
- ('Test Post 2',
- 'This is another test post. This one is smaller.',
+ ('Merch Drop Alert: New Designs Are Here!',
+ 'We just launched new merch! From limited-edition hoodies to collectible vinyl, there’s something for everyone. Check out the store before these designs sell out—they’re going fast!',
  'Arbin');
 
  INSERT INTO pictures(title, image_path) VALUES

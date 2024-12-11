@@ -73,6 +73,7 @@ $shows = $controller->listShows();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <!-- Include jQuery and DataTables JS -->

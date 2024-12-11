@@ -67,6 +67,7 @@ $transactions = $controller->listTransactions();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <!-- Include jQuery and DataTables JS -->

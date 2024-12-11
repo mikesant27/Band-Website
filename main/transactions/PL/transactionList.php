@@ -26,8 +26,7 @@ $transactions = $controller->listTransactions();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; 
-    ?>
+    <CENTER><?php include '../../../includes/header.php'; ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1 style="color: white;">Transactions</h1>

@@ -24,8 +24,9 @@ INSERT INTO blog (title, content, creator) VALUES
  'Arbin');
 
  INSERT INTO pictures(title, image_path) VALUES
- ('Test Picture', 
- '../../../includes/pictures/Sasuke.jpg');
+ ('Concert','../../../includes/pictures/concert.jpg'),
+ ('Band on Stage','../../../includes/pictures/concert_and_band.jpg'),
+ ('Stage','../../../includes/pictures/stage.jpg');
 
  INSERT INTO song(title, duration, image_path) VALUES
  ('Crimson Dawn', '00:04:12', '../../../includes/images/SoldierField.jpg'),

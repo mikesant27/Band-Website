@@ -26,14 +26,13 @@ $transactions = $controller->listTransactions();
 </head>
 
 <body>
-    <?php include '../../../includes/header.php'; 
-    ?>
+    <CENTER><?php include '../../../includes/header.php'; ?></CENTER>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center">
             <h1 style="color: white;">Transactions</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table>
+            <table id='productTable'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -68,6 +67,7 @@ $transactions = $controller->listTransactions();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <!-- Include jQuery and DataTables JS -->

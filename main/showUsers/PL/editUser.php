@@ -54,7 +54,7 @@ if (isset($_GET['id'])) {
 <body class="bg-light">
     <div class="container mt-5">
         <div class="text-center mb-3">
-            <a href='userList.php' class='btn btn-secondary'>Back to Users</a>
+            <a href="userList.php" class="btn btn-secondary">Back to Users</a>
         </div>
 
         <div class="card">
@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="text" id="email" name="email" class="form-control" required
+                            <input type="email" id="email" name="email" class="form-control" required
                                 value="<?php echo htmlspecialchars($email); ?>">
                         </div>
 
@@ -86,11 +86,10 @@ if (isset($_GET['id'])) {
                             <input type="text" id="full_name" name="full_name" class="form-control" required
                                 value="<?php echo htmlspecialchars($full_name); ?>">
                         </div>
-                        
+
                         <div class="mb-3">
                             <label for="role" class="form-label">Role:</label>
-                            <select name="role" id="role">
-                                <!--Dynamically sets default value of the select to the users current role-->
+                            <select id="role" name="role" class="form-select">
                                 <option value="admin" <?php echo htmlspecialchars($role) === 'admin' ? 'selected' : ''; ?>>Admin</option>
                                 <option value="staff" <?php echo htmlspecialchars($role) === 'staff' ? 'selected' : ''; ?>>Staff</option>
                                 <option value="customer" <?php echo htmlspecialchars($role) === 'customer' ? 'selected' : ''; ?>>Customer</option>

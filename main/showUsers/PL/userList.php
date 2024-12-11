@@ -34,7 +34,7 @@ $users = $controller->listUsers();
             <h1 style="color: white;">Users</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table id='userTable'>
+            <table id='productTable'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -78,6 +78,7 @@ $users = $controller->listUsers();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <!-- Include jQuery and DataTables JS -->
@@ -86,7 +87,7 @@ $users = $controller->listUsers();
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('#userTable').DataTable({
+        $('#productTable').DataTable({
             responsive: true,
             autoWidth: false,
             paging: true,   

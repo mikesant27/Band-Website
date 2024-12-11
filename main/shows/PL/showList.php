@@ -34,7 +34,7 @@ $shows = $controller->listShows();
             <h1 style="color: white;">Shows</h1>
         </div>
         <div class="table-responsive mt-3">
-            <table>
+            <table id='productTable'>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -73,6 +73,7 @@ $shows = $controller->listShows();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <!-- Include jQuery and DataTables JS -->

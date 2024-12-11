@@ -14,5 +14,6 @@
             <?php include 'main_pictures.php'; ?>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 </body>
 </html>

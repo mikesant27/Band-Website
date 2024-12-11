@@ -77,6 +77,7 @@ $products = $controller->listProducts();
             </table>
         </div>
     </div>
+    <?php include '../../../includes/footer.php';?>
 
     <!-- jQuery, Bootstrap JS, and DataTables JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

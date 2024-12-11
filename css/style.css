@@ -14,7 +14,13 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+@font-face {
+    font-family: 'Metallica';
+    src: url('../includes/fonts/Metallica.ttf') format('truetype');
+}
+
 .header h1 {
+    font-family: 'Metallica', sans-serif;
     margin: 0;
     font-size: 2.5em;
     letter-spacing: 2px;

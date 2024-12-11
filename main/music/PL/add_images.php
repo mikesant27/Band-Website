@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../../css/style.css">
+
 <div class="container mt-3">
     <h2>Insert Music Image</h2>
     <div class="card">

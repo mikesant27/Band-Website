@@ -29,13 +29,6 @@ INSERT INTO blog (title, content, creator) VALUES
  ('Stage','../../../includes/pictures/stage.jpg');
 
  INSERT INTO song(title, duration, image_path) VALUES
- ('Crimson Dawn', '00:04:12', '../../../includes/images/SoldierField.jpg'),
- ('Through the Looking Glass', '00:05:03', '../../../includes/images/SoldierField.jpg'),
- ('Eclipsed Memories', '00:03:47', '../../../includes/images/SoldierField.jpg'),
- ('Winds of Saturn', '00:06:15', '../../../includes/images/SoldierField.jpg'),
- ('Ethereal Tide', '00:04:58', '../../../includes/images/SoldierField.jpg'),
- ('Celestial Shadows', '00:04:30', '../../../includes/images/SoldierField.jpg'),
- ('Fragments of Light', '00:03:52', '../../../includes/images/SoldierField.jpg'),
- ('Distant Echoes', '00:05:42', '../../../includes/images/SoldierField.jpg'),
- ('Whispers in the Void', '00:04:20', '../../../includes/images/SoldierField.jpg'),
- ('Midnight Reverie', '00:06:05', '../../../includes/images/SoldierField.jpg');
+ ('Crimson Dawn', '00:04:12', '../../../includes/images/Crimson_Dawn.webp'),
+ ('Through the Looking Glass', '00:05:03', '../../../includes/images/Through_the_Looking_Glass.webp'),
+ ('Eclipsed Memories', '00:03:47', '../../../includes/images/Eclipsed_Memories.webp');

@@ -33,6 +33,8 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
+  justify-content: center;
+  display: flex;
 }
 
 .topnav a {
@@ -69,7 +71,7 @@ body {
   }
 
   .topnav.responsive {
-    position: relative;
+    flex-direction: column;
   }
 
   .topnav.responsive .icon {

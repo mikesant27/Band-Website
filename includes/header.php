@@ -38,7 +38,7 @@ body {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #ff4500;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -46,31 +46,32 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: #1a1a1a;
+  color:rgb(172, 48, 3);
 }
 
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+  color: #ff4500;
 }
 
 .topnav .icon {
   display: none;
 }
 
-
-
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  
   .topnav a.icon {
     float: left;
     display: block;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -87,6 +88,7 @@ body {
 <body>
 
 <div class="topnav" id="myTopnav">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
     <a href="../../home/PL/home.php">Home</a>
     <a href="../../music/PL/music.php">Music</a>
     <a href="../../shows/PL/showList.php">Shows</a>
@@ -95,7 +97,6 @@ body {
     <a href="../../pictures/PL/pictures.php">Pictures</a>
     <?php if ($isAdmin): ?><a href="../../admin/PL/admin.php">Admin</a><?php endif; ?>
     <?php if ($isStaff): ?><a href="../../staff/PL/staff.php">Staff</a><?php endif; ?>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
 </div>
 
 <div class="header">

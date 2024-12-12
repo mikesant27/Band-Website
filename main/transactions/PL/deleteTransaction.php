@@ -1,4 +1,14 @@
 <?php
+// Start the session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Redirect non-admin users
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ../../home/PL/home.php');
+    exit();
+}
 require_once '../BLL/TransactionController.php';
 
 $error_message = '';

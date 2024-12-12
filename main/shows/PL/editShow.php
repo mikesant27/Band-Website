@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Redirect non-admin users
+// Redirect non-staff users
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'staff') {
     header('Location: ../../home/PL/home.php');
     exit();

@@ -1,3 +1,6 @@
+DROP DATABASE bandb;
+CREATE DATABASE bandb;
+
 CREATE TABLE users (
   id int NOT NULL AUTO_INCREMENT,
   username varchar(50) NOT NULL,
@@ -63,3 +66,14 @@ CREATE TABLE `pictures` (
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 );
+
+/*
+Note: Since we use password_hash() to hash the passwords, you cannot insert a new user in phpmyadmin without the password being stored as plain text
+
+To get around this, create a new user and run the following query:
+
+UPDATE users SET role='admin' WHERE id=1;
+
+After running this query you can create new users and upgrade them to staff/admin using the admin dashboard.
+
+*/

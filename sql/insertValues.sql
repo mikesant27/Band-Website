@@ -24,8 +24,11 @@ INSERT INTO blog (title, content, creator) VALUES
  'Arbin');
 
  INSERT INTO pictures(title, image_path) VALUES
- ('Test Picture', 
- '../../../includes/pictures/Sasuke.jpg');
+ ('Concert','../../../includes/pictures/concert.jpg'),
+ ('Band on Stage','../../../includes/pictures/concert_and_band.jpg'),
+ ('Stage','../../../includes/pictures/stage.jpg');
 
  INSERT INTO song(title, duration, image_path) VALUES
- ('First', '00:02:25', '../../../includes/images/SoldierField.jpg');
+ ('Crimson Dawn', '00:04:12', '../../../includes/images/Crimson_Dawn.jpg'),
+ ('Through the Looking Glass', '00:05:03', '../../../includes/images/Through_the_Looking_Glass.jpg'),
+ ('Eclipsed Memories', '00:03:47', '../../../includes/images/Eclipsed_Memories.jpg');

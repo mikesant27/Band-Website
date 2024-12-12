@@ -63,8 +63,3 @@ CREATE TABLE `pictures` (
   `image_path` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 );
-
-/*
-Maybe change service_type to products bought?
-Transactions table not working
-*/

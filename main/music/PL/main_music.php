@@ -85,7 +85,7 @@ if (isset($conn)) {
 /* Default carousel size for larger screens */
 .carousel-container {
     padding-top: 20px;
-    width: 60% !important;
+    width: 40% !important;
     margin: 0 auto;
     text-align: center;
 }

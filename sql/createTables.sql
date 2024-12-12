@@ -70,7 +70,7 @@ CREATE TABLE `pictures` (
 /*
 Note: Since we use password_hash() to hash the passwords, you cannot insert a new user in phpmyadmin without the password being stored as plain text
 
-To get around this, create a new user and run the following query:
+To get around this, create a new user and run the following query (or use the banddb.sql file that was exported from phpmyadmin:
 
 UPDATE users SET role='admin' WHERE id=1;
 

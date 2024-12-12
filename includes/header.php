@@ -73,7 +73,7 @@ body {
   }
 
   .topnav.responsive .icon {
-    position: absolute;
+    position: left;
     right: 0;
     top: 0;
   }
